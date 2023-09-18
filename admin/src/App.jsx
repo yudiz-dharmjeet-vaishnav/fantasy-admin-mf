@@ -1,14 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom"
 
 import "./index.css";
+import Routes from "./Routes";
 
 const App = () => (
   <div className="container">
-    <div>Name: admin</div>
-    <div>Framework: react</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Empty CSS</div>
+    <Router>
+      <Routes />
+    </Router>
   </div>
 );
 ReactDOM.render(<App />, document.getElementById("app"));

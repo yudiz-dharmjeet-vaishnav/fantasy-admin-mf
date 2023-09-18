@@ -1,14 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom"
 
 import "./index.css";
+import Routes from "./Routes";
+import AdminRoutes from "admin/Routes"
 
-const App = () => (
-  <div className="container">
-    <div>Name: host</div>
-    <div>Framework: react</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Empty CSS</div>
-  </div>
-);
+const App = () => {
+  return (
+    <div className="container">
+      <Router>
+        <Routes />
+        <AdminRoutes />
+      </Router>
+    </div>
+  )
+};
 ReactDOM.render(<App />, document.getElementById("app"));
