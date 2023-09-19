@@ -1,14 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";
-
-import "./index.css";
+import './assets/css/style.scss'
 
 const App = () => (
-  <div className="container">
-    <div>Name: ui</div>
-    <div>Framework: react</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Empty CSS</div>
-  </div>
+  <></>
 );
-ReactDOM.render(<App />, document.getElementById("app"));
+
+export default App

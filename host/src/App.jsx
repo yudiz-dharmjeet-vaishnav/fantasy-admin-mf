@@ -1,19 +1,21 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom"
 
-import "./index.css";
 import Routes from "./Routes";
-import AdminRoutes from "admin/Routes"
+import AdminApp from "admin/App"
+import UiApp from "ui/App"
 
 const App = () => {
   return (
-    <div className="container">
-      <Router>
-        <Routes />
-        <AdminRoutes />
-      </Router>
-    </div>
+    <Router>
+      <Routes />
+      <AdminApp />
+      <UiApp />
+    </Router>
   )
 };
-ReactDOM.render(<App />, document.getElementById("app"));
+
+const root = ReactDOM.createRoot(document.getElementById("app"))
+
+root.render(<App />);

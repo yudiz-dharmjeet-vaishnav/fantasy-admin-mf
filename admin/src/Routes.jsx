@@ -1,6 +1,6 @@
 import { useRoutes } from 'react-router-dom'
 
-import Login from './pages/Login'
+import LoginPage from './views/Auth/Login/Login'
 
 function Routes() {
   const element = useRoutes([
@@ -8,7 +8,7 @@ function Routes() {
       path: "/auth",
       children: [
         {
-          path: "login", element: <Login />
+          path: "login", element: <LoginPage />
         }
       ]
     }

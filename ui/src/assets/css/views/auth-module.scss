@@ -1,0 +1,150 @@
+/******* How it works Section CSS ******/
+
+
+.login-section-img {
+    height: 100vh;
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+
+
+     
+}
+@media screen and (max-width:820px) {
+    display: none;
+}
+}
+.login-form-section {
+  
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width:820px) {
+    width: 100%;
+       
+    }
+    .login-section {
+        padding: 32px 15px;
+
+        .login-block {
+            width: 500px;
+            background: $white;
+            box-shadow: 0px 72px 80px rgba(1, 9, 25, 0.12), 0px 42.3936px 41.728px rgba(1, 9, 25, 0.086784), 0px 21.7728px 19.584px rgba(1, 9, 25, 0.067392), 0px 8.7552px 8.576px rgba(1, 9, 25, 0.052608), 0px 1.9584px 3.712px rgba(1, 9, 25, 0.033216);
+            border-radius: 8px;
+            overflow: hidden;
+            border-radius: 0px;
+        }
+
+        .login-header {
+            padding: 20px;
+            background: $white;
+            color: $popup-header-text;
+            border-bottom: 1px solid $table-head;
+
+            .login-h2 {
+                font-weight: 700;
+                font-size: 34px;
+                line-height: 40px;
+                color: $popup-header-text;
+            }
+
+            .login-p {
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 24px;
+                color: $radio-btn-border;
+            }
+
+            img {
+                flex-shrink: 0;
+                -webkit-flex-shrink: 0;
+            }
+        }
+
+        .form-section {
+            padding: 24px;
+        }
+
+        .login-text-pwd {
+            padding-top: 28px;
+            padding-bottom: 4px;
+
+            p {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 20px;
+                color: $label-font-color;
+                cursor: pointer;
+                margin: 0px;
+            }
+
+        }
+
+        .login-text-otp {
+            padding-top: 28px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+
+            .p2 {
+                cursor: pointer;
+            }
+
+            p {
+                color: $label-font-color;
+
+                .login-span {
+                    color: $hover-theme;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .theme-btn-login {
+            display: inline-block;
+            background: $theme-color;
+            color: $white;
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 500;
+            text-align: center;
+            border-radius: 0px;
+            height: 56px;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 0px 4px 8px 2px rgba(8, 68, 196, 0.24);
+                background-color: $theme-revamp;
+            }
+
+            &.full-btn {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.login-otp-input{
+    display:flex;
+    justify-content: center;
+      input{
+        margin: 10px;
+        height: 50px;
+        width: 100%;
+        border: 1px solid #CEDDFD;
+        border-radius: 0px;
+        text-align: center;
+        background: $white;
+        color: $popup-header-text;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+      }
+  }

@@ -36,6 +36,18 @@ module.exports = (_, argv) => ({
           loader: "babel-loader",
         },
       },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
+        test: /\.(svg|png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
     ],
   },
 
@@ -43,9 +55,11 @@ module.exports = (_, argv) => ({
     new ModuleFederationPlugin({
       name: "admin",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        "ui": "ui@http://localhost:3001/remoteEntry.js"
+      },
       exposes: {
-        "./Routes": "./src/Routes.jsx"
+        "./App": "./src/App.jsx"
       },
       shared: {
         ...deps,

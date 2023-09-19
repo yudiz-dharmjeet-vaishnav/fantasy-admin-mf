@@ -27,7 +27,7 @@ module.exports = (_, argv) => ({
       },
       {
         test: /\.(css|s[ac]ss)$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
       },
       {
         test: /\.(ts|tsx|js|jsx)$/,
@@ -35,6 +35,14 @@ module.exports = (_, argv) => ({
         use: {
           loader: "babel-loader",
         },
+      },
+      {
+        test: /\.(svg|png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       },
     ],
   },
@@ -44,7 +52,10 @@ module.exports = (_, argv) => ({
       name: "ui",
       filename: "remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        "./pages/Login": "./src/views/Auth/Login",
+        "./App": "./src/App"
+      },
       shared: {
         ...deps,
         react: {

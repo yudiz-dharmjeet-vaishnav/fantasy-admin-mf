@@ -1,10 +1,8 @@
-import { useRoutes } from 'react-router-dom'
-
-import Home from './Home'
+import { Navigate, useRoutes } from 'react-router-dom'
 
 function Routes() {
   const element = useRoutes([
-    { path: "/", element: <Home/> }
+    { path: "/", element: <Navigate to="/auth/login" /> }
   ]);
   return element;
 }

@@ -1,15 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom"
+import React from 'react'
+import { Provider } from 'react-redux'
 
 import "./index.css";
 import Routes from "./Routes";
+import { store } from './Store'
 
 const App = () => (
-  <div className="container">
-    <Router>
-      <Routes />
-    </Router>
-  </div>
+  <Provider store={store}>
+    <Routes />
+  </Provider>
 );
-ReactDOM.render(<App />, document.getElementById("app"));
+
+export default App

@@ -1,0 +1,31 @@
+@import './variables.scss';
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+@import "./fanstasy-revamp.scss";
+// @import './fantasy.scss';
+
+// Component SCSS
+// @import './components/navigation.scss';
+@import './components/navigation-revamp.scss';
+
+// @import './components/alert.scss';
+@import './components/alert-revamp.scss';
+
+// Views SCSS
+@import './views/auth-module.scss';
+
+// @import './views/user-module.scss';
+@import './views/user-module-revamp.scss';
+
+// @import './views/contest-module.scss';
+@import './views/user-module-revamp.scss';
+
+@import './views/theme-module.scss';
+// @import './views/profile-module.scss';
+@import 'react-datepicker/dist/react-datepicker.css';
+@import '../css/views/score-card.scss';
+
+// @import 'components/Pagination.scss';
+@import 'components/Pagination-revamp.scss';
+
+@import './base-team.scss';

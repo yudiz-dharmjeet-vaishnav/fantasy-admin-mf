@@ -1,0 +1,676 @@
+@charset "utf-8";
+/* CSS Document */
+
+/******* Fonts Face CSS Start **********/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/********* Fonts Face CSS End **********/
+
+/******* Common Element CSS Start ******/
+* {
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+}
+
+body {
+    background: $page-background;
+    font-family: $theme-font;
+    font-size: 16px;
+    line-height: 20px;
+    color: $theme-font-color;
+}
+
+// Player List Style
+.base-team {
+    width: 100%;
+    // height: 100%;
+    max-height: fit-content;
+
+    .player-main-div {
+        height: 100%;
+        width: 350px;
+        border-right: 1px solid $border-color;
+        box-shadow: 0px 4px 8px 2px rgba(8, 68, 196, 0.24);
+        background: $white;
+        
+
+        .player-list-head { 
+            padding: 16px, 24px, 16px, 24px;
+            height: 150px;
+            width: 350px;
+            // border:1px solid green;
+
+            .m-time {
+                text-align: center;
+                position: relative;
+                height: 23px;
+                color: $input-placeholder-color;
+                padding: 8px 16px 8px 16px;
+
+                strong {
+                    font-size: 14px;
+                    line-height: 16px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .team {
+            .t-img1 {
+                position: relative;
+                padding: 8px 9px 8px 3px;
+                z-index: 1;
+
+                img {
+                    width: 36px;
+                    height: 36px;
+                    @include css3-prefix("border-radius", "100%");
+                    object-fit: cover;
+                }
+
+            }
+
+            .t-img {
+                position: relative;
+                padding: 8px 3px 8px 9px;
+                z-index: 1;
+
+                img {
+                    width: 36px;
+                    height: 36px;
+                    @include css3-prefix("border-radius", "100%");
+                    object-fit: cover;
+                }
+            }
+
+            .name {
+                padding: 0 6px;
+
+                h3 {
+                    margin: 0;
+                    font-weight: 600;
+                    font-size: 14px;
+                    color: $darkGray;
+                    line-height: 18px;
+                }
+            }
+        }
+
+        .player-role {
+            width: 350px;
+            height: 30px;
+            background-color: $table-head;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 1px solid $border-color;
+            margin-top: 21px;
+
+            .player-roles-list {
+                font-size: 14px;
+                line-height: 16px;
+                color: $label-font-color;
+                font-weight: 500;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+            }
+            .player-roles-list-active {
+                font-size: 14px;
+                line-height: 16px;
+                color: $success-status-color;
+                font-weight: 500;
+                background: transparent;
+                border: none;
+                cursor: pointer;    
+            }
+        }
+
+        .scrolling {
+            overflow-y: scroll;
+            overflow-x: hidden;
+            // height: 570px;
+            height: calc(100vh - 80px - 202px - 55px) !important;
+
+
+            .player-listing {
+                width: 340px;
+                height: 150px;
+                border: 1px solid $border-color;
+                margin-top: 4px;
+                margin-left:4px;
+                margin-bottom:4px;
+                padding: 16px;
+
+                .player-img-div {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .player-img {
+                        display: flex;
+                        align-items: center;
+
+                        .player-details-div {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            img {
+                                display: flex;
+                                align-items: center;
+                                height: 40px;
+                                width: 40px;
+                                @include css3-prefix("border-radius", "100%");
+                                object-fit: cover;
+                                // border: 1px solid $img-border;
+                            }
+                        }
+
+                        h4 {
+                            font-family: 'Roboto';
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 16px;
+                            line-height: 20px;
+                            color: $label-font-color;
+                            margin: 0px;
+                        }
+
+                        h5 {
+                            font-family: 'Roboto';
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 12px;
+                            line-height: 16px;
+                            color: $input-placeholder-color;
+                            margin: 0px;
+                        }
+                    }
+                }
+
+                .player-add {
+                        img {
+                           cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .scrolling::-webkit-scrollbar {
+            display: none;
+        }
+
+        .credits-div {
+            width: 350px;
+            height: 25px;
+            background-color: $table-head;
+
+            h4 {
+                margin-right: 40px;
+                background: transparent;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 20px;
+                border: none;
+                color: $hover-theme;
+            }
+        }
+
+        .credits {
+            // border: 1px solid red;
+            background-color: $table-head;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 33px;
+            padding: 4px 8px;
+
+            h4 {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 20px;
+                border: none;
+                color: $hover-theme;
+                margin-bottom: 0;
+            }
+        }
+
+        .played-last-match {
+            background-color: $border-color;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 33px;
+            padding: 4px 8px;
+
+            .played-div {
+                background: white;
+                border-radius: 54px;
+                display: flex;
+                padding: 2px 8px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+
+                .played-match {
+                    color: $input-placeholder-color;
+                    font-size: 12px;
+                    line-height: 16px;
+                    font-weight: 500;
+                }
+                .playing{
+                    color: $badge-success;
+                    font-size: 12px;
+                    line-height: 16px;
+                    font-weight: 500;
+                }
+            }
+
+            h4 {
+                color: $prize-popup-txt;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                border: none;
+                margin-bottom: 0;
+                text-align: center;
+            }
+        }
+
+    }
+    .scroll-container {
+        width: 100%;
+        overflow: hidden;
+        cursor: grabbing;
+        user-select: none;
+        .scroll-league{
+            min-width: 500px;
+            display: flex; /* Make sure content is in a flex container */
+            transition: transform 0.2s ease; /* Smooth transition */
+            // transform: translateX();
+          }
+      }
+    // .scroll-league {
+    //     min-width: none;
+    //     // max-width: 750px;
+    //     max-width: 1450px;
+    //     display: flex;
+    //     overflow-x: scroll;
+    // }
+    // .scroll-league::-webkit-scrollbar {
+    //     display: none;
+    // }
+
+    // Teams Styles
+    .teams-main-div {
+        // min-width: 100%;
+        // max-width: 95%;
+        width: 260px;
+        // margin-left: 16px;
+        // background-color: $white;
+        // border: 1px solid red;
+
+        .teams-list-head {
+            border: 1px solid $border-color;
+            width: 100%;
+            // padding: 2px 8px;
+            background-color: $white;
+
+            .teams-input {
+                padding: 2px 8px 4px;
+
+                .title {
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 500;
+                    margin: 0px
+                }
+
+                .title-input {
+                    border-radius: 0px;
+                    border: 1px solid $border-color;
+                }
+
+            }
+
+            .team-credits {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 0px 8px;
+
+                h4 {
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 16px;
+                    color: $input-placeholder-color;
+                }
+            }
+
+            .teams-player {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                
+                h4 {
+                    margin: 0;
+                    padding: 8px 0;
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 16px;
+                    color: $label-font-color;
+                    flex: 1;
+                    border-right: 1px solid #3B77F7;
+                    &:last-child {
+                        border: none;
+                    }
+                }
+                strong{
+                    color: $hover-theme;
+                }
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 1px;
+                    left: 0;
+                    top: 0;                 
+                    background: linear-gradient(270deg, transparent 0,#3B77F7 20%,#3B77F7 80%, transparent 100%);
+                }
+                &::after {
+                    top: auto;
+                    bottom: 0;
+                }
+
+            }
+
+            .teams-fill-player {
+                display: flex;
+                // border: 1px solid red;
+                justify-content: space-evenly;
+                align-items: center;
+                height: 16px;
+
+                tr {
+                    height: 0px !important;
+
+                    .team-fill{
+                        border: 1px solid $border-color;
+                        height: 3px;
+                        width: 15px;
+                        background: $border-color;
+                    }
+                    .selected-fill-player {
+                        border: 1px solid $hover-theme;
+                        height: 3px;
+                        width: 15px;
+                        background:$hover-theme;
+                    }
+                }
+            }
+        }
+
+
+        .scrolling{
+            overflow-y: scroll;
+            overflow-x: hidden;
+            // height: 569px;
+            height: calc(100vh - 80px - 202px - 55px) !important;
+
+            .teams-player-listing {
+                width: 100%;
+                height: 150px;
+                border: 1px solid $border-color;
+                margin-top: 4px;
+                background-color: $white;
+    
+                .players-wrap {
+                    width: 100%;
+                    height: 150px;
+                    padding: 16px;
+                    display:flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+    
+                    .player-img,
+                    .player-name {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+    
+                        img {
+                            display: flex;
+                            align-items: center;
+                            height: 40px;
+                            width: 40px;
+                            @include css3-prefix("border-radius", "100%");
+                            object-fit: cover;
+                            border: 1px solid $img-border;
+                        }
+    
+                        h4 {
+                            font-size: 16px;
+                            font-weight: 500;
+                            line-height: 20px;
+                            margin-top: 16px;
+                            text-align: center;
+                        }
+                    }
+    
+                    .add-btn-div {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                           .add-btn {
+                                height: 30px;
+                                width: 30px;
+                                cursor: pointer;
+                                background-color: #39C679;
+                                border-radius:30px;
+                                border:none;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                img{
+                                max-width: 24px;
+                                margin: 0 !important;
+                                }
+                            }
+                            .remove-btn{
+                                height: 30px;
+                                width: 30px;
+                                cursor: pointer;
+                                background-color: #F95252;
+                                border-radius:30px;
+                                border:none;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                img{
+                                max-width: 24px;
+                                margin: 0 !important;
+                                }
+                            }
+                        }
+                    .disable-btn {
+                        pointer-events: none;
+                    }
+                }
+    
+    
+    
+            }
+        }
+         .scrolling::-webkit-scrollbar {
+            display: none;
+        }
+
+    }
+}
+
+// Create Team Style 
+
+.create-team-btn{
+    background-color: $success-status-color;
+    width:340px;
+    border-radius: 0px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 8px 10px;
+
+    &:hover {
+        box-shadow: 0px 4px 8px 2px rgba(8, 68, 196, 0.24);
+        background-color: $theme-revamp;
+    }
+}
+
+// Footer Styles
+    .footer-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $white;
+        height: 55px;
+        border-top: 1px solid $hover-theme;
+        border-right: 1px solid $hover-theme;
+        border-left: 1px solid $hover-theme;
+        padding: 10px 10px 10px 10px;
+        box-shadow: 0px 4px 16px 0px rgba(122, 131, 159, 0.16);
+
+        .theme-btn-discard{
+            border: 2px solid $badge-live;
+            border-radius: 0px;
+            color: $badge-live;
+            background:$badge-live-bgcolor;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 500;
+            width: 85px;
+            height: 36px;
+            text-align: center;
+        }
+}
+// .btn-secondary:not(:disabled):not(.disabled):active{
+//     color: $white;
+//     background-color: $badge-live-bgcolor;
+//     border-color: $badge-live;
+//     border: 2px solid $badge-live;
+// }
+
+// .unique {
+//     background-color: #fefaf1;
+// }
+.disabled{
+
+    opacity: 0.6;
+}
+
+
+// Save All Popup Modal Design
+.saveallmodal {
+    .modal-content {
+        overflow: visible;
+        max-width: 550px;
+        border-radius: 0px;
+    }
+
+    .modal-header {
+        .modal-title {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 28px;
+            color: $popup-header-text;
+            margin-bottom: 0px;
+        }
+    }
+
+    .saved-team-label {
+        border-bottom: 1px solid var(--neutral-s-800, #D3D6DF);
+
+        .team-label {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            color: $success-status-color;
+        }
+    }
+
+    .saved-team {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 8px;
+        p{
+            font-family: Roboto;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            color: #101828;
+            margin-bottom: 0px;
+        }
+        .saved-badge {
+            width: 85px;
+            height: 32px;
+            color: $badge-success;
+            background-color: $badge-success-bgcolor;
+            border-radius: 7.15px;
+            align-items: center;
+            padding: 10px 10px;
+        }
+        .fail-dupli{
+            width: 100%;
+            height: 32px;
+            color: $badge-danger;
+            background: $badge-danger-bgcolor;
+            border-radius: 7.15px;
+            padding: 10px 12px;
+        }
+        .fail-same{
+            width: 100%;
+            height: 32px;
+            color: $badge-upcoming;
+            background: $badge-upcoming-bgcolor;
+            border-radius: 7.15px;
+            padding: 10px 12px;
+        }
+        .fail-invalid{
+            width: 100%;
+            height: 32px;
+            color: $badge-pending;
+            background: $badge-pending-bgcolor;
+            border-radius: 7.15px;
+            padding: 10px 12px;
+        }
+    }
+    .unsave-team-label{
+        border-bottom: 1px solid var(--neutral-s-800, #D3D6DF);
+        margin-top: 24px;
+
+        .team-label{
+            color: $badge-danger;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+        }
+    }
+    .fail-msg{
+        font-family: Roboto;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+        color: $input-placeholder-color;
+    }
+
+}
