@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 
-import "./index.css";
+import './assets/css/style.scss'
 import Routes from "./Routes";
 import { store } from './Store'
 

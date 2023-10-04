@@ -27,7 +27,7 @@ module.exports = (_, argv) => ({
       },
       {
         test: /\.(css|s[ac]ss)$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
       },
       {
         test: /\.(ts|tsx|js|jsx)$/,
@@ -55,9 +55,7 @@ module.exports = (_, argv) => ({
     new ModuleFederationPlugin({
       name: "admin",
       filename: "remoteEntry.js",
-      remotes: {
-        "ui": "ui@http://localhost:3001/remoteEntry.js"
-      },
+      remotes: {},
       exposes: {
         "./App": "./src/App.jsx"
       },
