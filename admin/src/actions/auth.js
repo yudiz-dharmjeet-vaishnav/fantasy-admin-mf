@@ -1,6 +1,6 @@
 import axios from '../axios'
-// import { history } from '../App'
-import { encryption } from '../helper'
+import { history } from '../App'
+import { encryption } from '../helpers/helper'
 import { CLEAR_AUTH_PROPS, CLEAR_AUTH_RESPONSE, CLEAR_MESSAGE, LOGIN, LOGIN_OTP, LOGOUT, RESET_PASSWORD, SEND_OTP } from './constants'
 
 const errMsg = 'Server is unavailable.'
@@ -15,6 +15,7 @@ const login = (email, password) => async (dispatch) => {
     const userData = response.data && response.data.data
     const obj = {}
     localStorage.setItem('Token', response.data.Authorization)
+    localStorage.setItem('RefreshToken', response?.data?.RefreshToken)
     localStorage.setItem('adminData', JSON.stringify(response.data.data))
     userData && userData.aRole && userData.aRole && userData.aRole.map((item) => {
       item.aPermissions.map(permission => {
@@ -96,6 +97,7 @@ const verifyLoginOtp = (email, sAuth, sType, otp, longitude, latitude) => async 
     const userData = response.data && response.data.data
     const obj = {}
     localStorage.setItem('Token', response.data.Authorization)
+    localStorage.setItem('RefreshToken', response?.data?.RefreshToken)
     localStorage.setItem('adminData', JSON.stringify(response.data.data))
     userData && userData.aRole && userData.aRole && userData.aRole.map((item) => {
       item.aPermissions.map(permission => {
@@ -147,7 +149,7 @@ const logout = token => async (dispatch) => {
     localStorage.removeItem('Token')
     localStorage.removeItem('adminData')
     localStorage.removeItem('adminPermission')
-    // history.push('/admin/auth/login')
+    history.push('/admin/auth/login')
     dispatch({ type: CLEAR_AUTH_PROPS })
     dispatch({
       type: LOGOUT,
@@ -212,4 +214,14 @@ const resetPassword = (token, password) => async (dispatch) => {
   })
 }
 
-export { login, loginOtp, verifyLoginOtp, logout, sendOtp, resetPassword }
+const getJWTToken = async ({ RefreshToken }) => {
+  try {
+    const response = await axios.get('/admin/auth/refresh-token/v1', { headers: { RefreshToken, noAuth: true } })
+    const authData = response?.data
+    return authData
+  } catch (err) {
+    return false
+  }
+}
+
+export { login, loginOtp, verifyLoginOtp, logout, sendOtp, resetPassword, getJWTToken }

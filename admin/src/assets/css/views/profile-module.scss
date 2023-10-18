@@ -60,7 +60,7 @@
                 bottom: 0;
                 height: 26px;
                 width: 26px;
-                background: $theme-color url(../../images/camera-icon.svg) no-repeat center center / 55% auto;
+                // background: $theme-color url(../../images/camera-icon.svg) no-repeat center center / 55% auto;
                 @include transform(translate(0%, -50%));
                 border-radius: 50%;
                 border: 2px solid #fff;
@@ -120,7 +120,7 @@
                 bottom: 0;
                 height: 26px;
                 width: 26px;
-                background: $theme-color url(../../images/camera-icon.svg) no-repeat center center / 55% auto;
+                // background: $theme-color url(../../images/camera-icon.svg) no-repeat center center / 55% auto;
                 @include transform(translate(0%, -50%));
                 border-radius: 50%;
                 border: 2px solid #fff;

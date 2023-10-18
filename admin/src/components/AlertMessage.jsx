@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import successIcon from '../assets/images/success-icon.svg'
 import alertIcon from '../assets/images/alert-icon.svg'
 
-import { alertClass } from '../helper'
+import { alertClass } from '../helpers/helper'
 
 function AlertMessage (props) {
   const {
