@@ -210,48 +210,6 @@ export const getLeagueLogs = (start, limit, leagueId, token) => async (dispatch)
   })
 }
 
-export const getMatchAPILogs = (matchId, start, limit, order, filter, token) => async (dispatch) => {
-  await axios.get(`/gaming/admin/api-logs/list/${matchId}/v1?start=${start}&limit=${limit}&order=${order}&eType=${filter}`, { headers: { Authorization: token } }).then((response) => {
-    dispatch({
-      type: MATCH_API_LOGS,
-      payload: {
-        data: response?.data?.data[0] || [],
-        resStatus: true
-      }
-    })
-  }).catch((error) => {
-    dispatch({
-      type: MATCH_API_LOGS,
-      payload: {
-        data: [],
-        resMessage: error.response ? error.response.data.message : errMsg,
-        resStatus: false
-      }
-    })
-  })
-}
-
-export const getMatchAPIDetails = (id, token) => async (dispatch) => {
-  await axios.get(`/gaming/admin/api-logs/${id}/v1`, { headers: { Authorization: token } }).then((response) => {
-    dispatch({
-      type: MATCH_API_DETAILS,
-      payload: {
-        data: response?.data?.data || [],
-        resStatus: true
-      }
-    })
-  }).catch((error) => {
-    dispatch({
-      type: MATCH_API_DETAILS,
-      payload: {
-        data: [],
-        resMessage: error.response ? error.response.data.message : errMsg,
-        resStatus: false
-      }
-    })
-  })
-}
-
 export const clearSubadminMsg = () => (dispatch) => {
   dispatch({ type: CLEAR_SUB_ADMIN_MESSAGE })
 }
