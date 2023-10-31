@@ -26,10 +26,6 @@ module.exports = (_, argv) => ({
         },
       },
       {
-        test: /\.(css|s[ac]ss)$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"],
-      },
-      {
         test: /\.(ts|tsx|js|jsx)$/,
         exclude: /node_modules/,
         use: {
@@ -44,7 +40,7 @@ module.exports = (_, argv) => ({
       name: "host",
       filename: "remoteEntry.js",
       remotes: {
-        "admin": "admin@http://localhost:3002/remoteEntry.js",
+        "admin": "admin@http://localhost:3001/remoteEntry.js",
       },
       exposes: {},
       shared: {
