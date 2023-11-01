@@ -4,16 +4,10 @@ import { unAuthorized } from './helpers/helper'
 import { store } from './Store'
 import apiLogger from './api/apilogger'
 import { getJWTToken } from './actions/auth'
-
-// function returnUrl (environment) {
-//   if (environment === 'development' || environment === 'staging') {
-//     return `${environment === 'development' ? process.env.REACT_APP_AXIOS_BASE_URL_DEV : process.env.REACT_APP_AXIOS_BASE_URL_STAG}`
-//   }
-//   return process.env.REACT_APP_AXIOS_BASE_URL_PROD
-// }
+import config from './config/config'
 
 const instance = axios.create({
-  baseURL: 'https://nodeback-dev.fantasywl.in/api'
+  baseURL: config.baseUrl
 })
 
 instance.interceptors.request.use((req) => {
